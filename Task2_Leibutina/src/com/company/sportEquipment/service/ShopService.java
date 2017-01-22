@@ -1,10 +1,7 @@
 package com.company.sportEquipment.service;
 
 import com.company.sportEquipment.bean.Equipment;
-
 import com.company.sportEquipment.service.exception.ServiceException;
-
-import java.util.List;
 
 public interface ShopService {
 

@@ -11,8 +11,7 @@ public class ServiceFactory {
     private ClientService clientService = new ClientServiceImpl();
     private ShopService shopService = new ShopServiceImpl();
 
-    private ServiceFactory() {
-    }
+    private ServiceFactory() {}
 
     public ClientService getClientService() {
         return clientService;

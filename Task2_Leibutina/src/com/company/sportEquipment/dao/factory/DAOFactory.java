@@ -7,6 +7,7 @@ import com.company.sportEquipment.dao.impl.SQLEquipmentDAO;
 import com.company.sportEquipment.dao.impl.SQLUserDAO;
 
 public final class DAOFactory {
+
     private static final DAOFactory daoFactory = new DAOFactory();
 
     private DAOFactory() {

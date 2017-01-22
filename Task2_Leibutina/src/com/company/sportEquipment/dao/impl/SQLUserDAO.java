@@ -3,7 +3,6 @@ package com.company.sportEquipment.dao.impl;
 import com.company.sportEquipment.bean.User;
 import com.company.sportEquipment.dao.UserDAO;
 import com.company.sportEquipment.dao.exception.DAOException;
-import com.company.sportEquipment.service.exception.ServiceException;
 
 import java.sql.*;
 

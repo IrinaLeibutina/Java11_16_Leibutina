@@ -3,7 +3,6 @@ package com.company.sportEquipment.controller;
 import com.company.sportEquipment.controller.command.Command;
 import com.company.sportEquipment.controller.command.CommandName;
 import com.company.sportEquipment.controller.command.impl.*;
-import com.company.sportEquipment.controller.command.impl.SingIn;
 
 import java.util.HashMap;
 import java.util.Map;

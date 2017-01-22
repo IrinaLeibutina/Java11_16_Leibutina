@@ -1,23 +1,18 @@
 package com.company.sportEquipment.view;
 
 import com.company.sportEquipment.controller.Controller;
-import com.company.sportEquipment.dao.exception.DAOException;
-import com.company.sportEquipment.service.exception.ServiceException;
-import com.company.sportEquipment.service.impl.ClientServiceImpl;
-
-import java.sql.*;
 
 public class Main {
 
-    public static void main(String[] args) throws SQLException, DAOException, ServiceException {
+    public static void main(String[] args) {
         String result;
         String client;
 
         Controller controller = new Controller();
 
-        result = controller.executeTask("REGISTRATION name=NAME surname=SURNAME" +
+        client = controller.executeTask("REGISTRATION name=NAME surname=SURNAME" +
                 " login=LOGIN password=PASSWORD");
-        System.out.println("Registration\n" + result);
+        System.out.println("Registration\n" + client);
 
         client = controller.executeTask("SIGN_IN login=LOGIN password=PASSWORD ");
         System.out.println("Sign in\n" + client);

@@ -30,7 +30,6 @@ public class SQLEquipmentDAO implements EquipmentDAO {
         }
     }
 
-
     @Override
     public void rentEquipment(String request) throws DAOException {
 
@@ -40,6 +39,7 @@ public class SQLEquipmentDAO implements EquipmentDAO {
         int price = 0;
         int id_equipment = 0;
         String currentSubstring = null;
+        String responce = null;
 
         currentSubstring = request.substring(request.indexOf("title"));
         title = currentSubstring.substring(6, currentSubstring.indexOf(' '));
@@ -73,11 +73,15 @@ public class SQLEquipmentDAO implements EquipmentDAO {
                         "values" + param;
                 myStm.executeUpdate(sql);
             } else {
-                throw new DAOException("Equipment wasn't found");
+                responce = "Not found";
             }
 
         } catch (Exception exception) {
             exception.printStackTrace();
+        }
+
+        if(responce=="Not found"){
+            throw new DAOException("There are no such equipment");
         }
     }
 
@@ -116,5 +120,4 @@ public class SQLEquipmentDAO implements EquipmentDAO {
             exception.printStackTrace();
         }
     }
-
 }
