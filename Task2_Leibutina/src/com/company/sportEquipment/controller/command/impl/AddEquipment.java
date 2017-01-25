@@ -16,6 +16,8 @@ public class AddEquipment implements Command {
         int price;
         int amount;
 
+        // и я вы поостереглась какого-нибудь runtime-а тут
+        // вдруг строка не правильная придет
         title = request.substring(request.indexOf("title"));
         title = title.substring(6, title.indexOf(' '));
         System.out.println("Title  - " + title);
