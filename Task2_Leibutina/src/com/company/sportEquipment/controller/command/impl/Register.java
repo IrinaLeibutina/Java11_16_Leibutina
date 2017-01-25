@@ -20,7 +20,7 @@ public class Register implements Command {
 
         name = request.substring(request.indexOf("name"));
         name = name.substring(5, name.indexOf(' '));
-        System.out.println("Name  - " + name);
+        System.out.println("Name  - " + name);// выкашивай при сдаче
 
         surname = request.substring(request.indexOf("surname"));
         surname = surname.substring(8, surname.indexOf(' '));
@@ -46,6 +46,7 @@ public class Register implements Command {
             clientService.registration(user);
             response = "Welcome";
         } catch (ServiceException e) {
+            // и лог тут надо прямо писать
             response = "Error during register procedure";
         }
 

@@ -12,7 +12,7 @@ public class RentEquipment implements Command {
 
         String response = null;
 
-        request = request.substring(request.indexOf("title"));
+        request = request.substring(request.indexOf("title"));// именуем константные строки
         System.out.println(request);
 
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
@@ -21,7 +21,7 @@ public class RentEquipment implements Command {
             shopService.rentEquipment(request);
             response = "Equipment can be rented";
         } catch (ServiceException e) {
-            response = "There are no equipment";
+            response = "There are no equipment";// не уверена, что это подходящее сообщение в случае появления исключения)
         }
 
         return response;

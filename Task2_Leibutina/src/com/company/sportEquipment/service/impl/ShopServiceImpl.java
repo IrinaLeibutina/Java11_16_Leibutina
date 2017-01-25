@@ -13,7 +13,8 @@ public class ShopServiceImpl implements ShopService {
     @Override
     public void addNewEquipment(Equipment equipment) throws ServiceException {
 
-        if (equipment == null) {
+        if (equipment == null) {// валидаыия в сервичах - это не только проверка на null
+            // это действительная проверка корректности всех пришедших параметров
             throw new ServiceException("Incorrect data");
         }
 
