@@ -6,6 +6,8 @@ import com.company.xmlAnalyzer.dao.exception.DAOException;
 import java.io.IOException;
 
 public interface FileHandlerDAO {
-    String readFile() throws DAOException, IOException;
-    String readPartFile(int from, int to) throws DAOException, IOException;
+    void openFile() throws DAOException;
+    void closeFile() throws DAOException;
+    String readFile() throws DAOException;
+    String readPartFile(int from, int to) throws DAOException;
 }

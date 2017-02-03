@@ -8,7 +8,8 @@ public class AnalyzerServiceImpl implements AnalyzerService {
 
     private int posBegin = 0;
     private int posEnd = 0;
-    private int sizeRead = 20;
+    private final String OPEN_TAG = "<";
+    private final String CLOSE_TAG = ">";
 
     @Override
     public Node analysisLine(String text) throws ServiceException {
@@ -23,32 +24,26 @@ public class AnalyzerServiceImpl implements AnalyzerService {
         Node node = new Node();
 
         if (posEnd >= text.length()) {
-            node.setCloseTag("end");
-            node.setOpenTag("end");
-            node.setContent("end");
-
+            node.setType("end");
             return node;
         }
 
-        posBegin = text.indexOf("<", posBegin);
-        posEnd = text.indexOf(">", posEnd);
+        posBegin = text.indexOf(OPEN_TAG, posBegin);
+        posEnd = text.indexOf(CLOSE_TAG, posEnd);
 
         tag = text.substring(posBegin, posEnd + 1);
 
         if (tag.contains("xml")) {
             posBegin = posBegin + 1;
             posEnd = posEnd + 1;
-            node.setCloseTag("not");
-            node.setOpenTag("not");
-            node.setContent("not");
 
             return node;
         }
 
         if (tag.contains(" ")) {
             int findSpace = tag.indexOf(" ");
-            int begin = tag.indexOf("<");
-            findCloseTag = "</" + tag.substring(begin + 1, findSpace) + ">";
+            int begin = tag.indexOf(OPEN_TAG);
+            findCloseTag = OPEN_TAG + "/" + tag.substring(begin + 1, findSpace) + CLOSE_TAG;
 
             int findPos = text.indexOf(findCloseTag, posEnd);
             String content = text.substring(posEnd + 1, findPos);
@@ -59,7 +54,7 @@ public class AnalyzerServiceImpl implements AnalyzerService {
             node.setCloseTag(findCloseTag);
         } else {
             if (!tag.contains("/")) {
-                findCloseTag = "</" + text.substring(posBegin + 1, posEnd) + ">";
+                findCloseTag = OPEN_TAG + "/" + text.substring(posBegin + 1, posEnd) + CLOSE_TAG;
                 int findPos = text.indexOf(findCloseTag, posEnd);
 
                 String content = text.substring(posEnd + 1, findPos);
