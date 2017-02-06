@@ -18,17 +18,14 @@ public class AddEquipment implements Command {
 
         title = request.substring(request.indexOf("title"));
         title = title.substring(6, title.indexOf(' '));
-        System.out.println("Title  - " + title);
 
         currentSubstring = request.substring(request.indexOf("price"));
         currentSubstring = currentSubstring.substring(6, currentSubstring.indexOf(' '));
         price = Integer.parseInt(currentSubstring);
-        System.out.println("Price - " + price);
 
         currentSubstring = request.substring(request.indexOf("amount"));
         currentSubstring = currentSubstring.substring(7, currentSubstring.indexOf(' '));
         amount = Integer.parseInt(currentSubstring);
-        System.out.println("Amount - " + amount);
 
         equipment.setTitle(title);
         equipment.setAmount(amount);

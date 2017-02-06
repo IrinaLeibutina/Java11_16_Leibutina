@@ -114,8 +114,6 @@ public class SQLEquipmentDAO implements EquipmentDAO {
             sql = "delete from rented where (id_equipments ='" + id_equipment + "') and (id_users='" + id_user + "')";
             int rowAffected = myStm.executeUpdate(sql);
 
-            System.out.println(rowAffected);
-
         } catch (Exception exception) {
             exception.printStackTrace();
         }

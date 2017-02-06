@@ -20,12 +20,11 @@ public class SingIn implements Command {
         password = request.substring(request.indexOf("password"));
         password = password.substring(9);
 
-        //System.out.println(password);
-        // System.out.println(login);
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
         ClientService clientService = serviceFactory.getClientService();
         try {
             clientService.singIn(login, password);
+            response = "Welcome " + clientService.singIn(login, password);
             response = "Welcome " + clientService.singIn(login, password);
         } catch (ServiceException e) {
             response = "Error during login procedure";

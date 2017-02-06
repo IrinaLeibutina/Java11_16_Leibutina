@@ -11,7 +11,6 @@ public class ReturnEquipment implements Command {
         String response = null;
 
         request = request.substring(request.indexOf("title"));
-        System.out.println(request);
 
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
         ShopService shopService = serviceFactory.getShopService();

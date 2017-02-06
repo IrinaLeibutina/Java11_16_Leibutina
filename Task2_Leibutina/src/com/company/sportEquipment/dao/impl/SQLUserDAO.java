@@ -45,7 +45,6 @@ public class SQLUserDAO implements UserDAO {
             ResultSet myRes = myStm.executeQuery(sql);
 
             if (!myRes.next()) {
-                System.out.println("Not find this login, you can registration");
 
                 String userInformation = "('" + user.getName() + "','" + user.getSurname() + "','"
                         + user.getLogin() + "','" + user.getPassword() + "')";
@@ -53,12 +52,10 @@ public class SQLUserDAO implements UserDAO {
                         "values" + userInformation;
 
                 myStm.executeUpdate(sql);
-            } else {
-                System.out.println("This login is used, try again");
             }
 
         } catch (Exception exception) {
-            exception.printStackTrace();
+          throw new DAOException();
         }
     }
 }

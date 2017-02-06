@@ -20,19 +20,15 @@ public class Register implements Command {
 
         name = request.substring(request.indexOf("name"));
         name = name.substring(5, name.indexOf(' '));
-        System.out.println("Name  - " + name);
 
         surname = request.substring(request.indexOf("surname"));
         surname = surname.substring(8, surname.indexOf(' '));
-        System.out.println("Surname  - " + surname);
 
         login = request.substring(request.indexOf("login"));
         login = login.substring(6, login.indexOf(' '));
-        System.out.println("Login  - " + login);
 
         password = request.substring(request.indexOf("password"));
         password = password.substring(9);
-        System.out.println("Password  - " + password);
 
         user.setName(name);
         user.setSurname(surname);
