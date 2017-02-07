@@ -14,10 +14,11 @@ public class WebAppSAXBuilder extends AbstractWebAppBuilder {
     private WebAppHandler sh;
     private XMLReader reader;
 
-   private List<Listener> webAppSet;
+    private WebApp webApp;
 
     public WebAppSAXBuilder() {
 
+        webApp = new WebApp();
         sh = new WebAppHandler();
         try {
             reader = XMLReaderFactory.createXMLReader();
@@ -37,12 +38,21 @@ public class WebAppSAXBuilder extends AbstractWebAppBuilder {
         } catch (IOException e) {
             System.err.print("ошибка I/О потока: " + e);
         }
-        webAppSet = sh.getListenerList();
+        webApp = sh.getWebApp();
+
+        System.out.println(webApp.getListeners());
+       // System.out.println("DisplayName =  " + webApp.getDisplayName());
+        System.out.println(webApp.getFilterMappings());
+
+       // System.out.println("Servlet" + webApp.getServlets());
+        System.out.println("ServletMapping" + webApp.getServletMappings());
+
+        System.out.println(webApp.getErrorPages());
     }
 
-    public List<Listener> getWebApp() {
-        return webAppSet;
-    }
+   //public List<Listener> getWebApp() {
+   //    return webApp.getListeners();
+   //}
 }
 
 

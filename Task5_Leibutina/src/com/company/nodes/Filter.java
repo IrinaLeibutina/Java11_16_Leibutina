@@ -27,7 +27,7 @@ public class Filter {
         return initParam;
     }
 
-    public void setAddress(InitParam initParam) {
+    public void setInitParam(InitParam initParam) {
         this.initParam = initParam;
     }
 

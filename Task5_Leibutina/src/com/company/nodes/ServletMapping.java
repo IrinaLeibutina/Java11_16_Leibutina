@@ -20,4 +20,11 @@ public class ServletMapping {
         this.urlPattern = urlPattern;
     }
 
+    @Override
+    public String toString() {
+        return "ServletMapping{" +
+                "servletName='" + servletName + '\'' +
+                ", urlPattern='" + urlPattern + '\'' +
+                '}';
+    }
 }

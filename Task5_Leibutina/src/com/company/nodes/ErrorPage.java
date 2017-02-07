@@ -33,11 +33,11 @@ public class ErrorPage {
     @Override
     public String toString() {
         if(errorCode==null){
-            return "ErrorPage {location='" + location + '\'' +
+            return "\nErrorPage {location='" + location + '\'' +
                     ", exceptionType='" + exceptionType + '\'' +
                     '}';
 
-        } else return  "ErrorPage{" +
+        } else return  "\nErrorPage{" +
                 "errorCode='" + errorCode + '\'' +
                 ", location='" + location + '\'' +
                 '}';
