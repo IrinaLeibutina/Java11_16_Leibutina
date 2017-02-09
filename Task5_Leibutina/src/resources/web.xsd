@@ -4,7 +4,6 @@
         xmlns:tns="http://www.example.org/web"
         elementFormDefault="qualified"
         attributeFormDefault="qualified">
-
     <element name="init-param">
         <complexType>
             <sequence>
@@ -13,12 +12,10 @@
             </sequence>
         </complexType>
     </element>
-
     <element name="web-app">
         <complexType>
             <choice maxOccurs="unbounded">
                 <element name="display-name" type="string"/>
-
                 <element name="welcome-file-list">
                     <complexType>
                         <sequence>
@@ -27,7 +24,6 @@
                         </sequence>
                     </complexType>
                 </element>
-
                 <element name="filter">
                     <complexType>
                         <sequence>
@@ -37,7 +33,6 @@
                         </sequence>
                     </complexType>
                 </element>
-
                 <element name="filter-mapping">
                     <complexType>
                         <sequence>
@@ -47,7 +42,6 @@
                         </sequence>
                     </complexType>
                 </element>
-
                 <element name="listener">
                     <complexType>
                         <sequence>
@@ -55,7 +49,6 @@
                         </sequence>
                     </complexType>
                 </element>
-
                 <element name="servlet">
                     <complexType>
                         <sequence>
@@ -65,7 +58,6 @@
                         </sequence>
                     </complexType>
                 </element>
-
                 <element name="servlet-mapping">
                     <complexType>
                         <sequence>
@@ -74,7 +66,6 @@
                         </sequence>
                     </complexType>
                 </element>
-
                 <element name="error-page">
                     <complexType>
                         <sequence>
@@ -83,11 +74,9 @@
                         </sequence>
                     </complexType>
                 </element>
-
             </choice>
             <attribute name="id" type="string" use="required"/>
             <attribute name="version" type="string" use="required"/>
-
         </complexType>
     </element>
 </schema>
